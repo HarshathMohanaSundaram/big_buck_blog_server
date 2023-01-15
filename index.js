@@ -34,4 +34,156 @@ app.get("/nse",(req,res)=>{
     })
 })
 
+app.get("/bse",(req,res)=>{
+    result=[];
+    fs.createReadStream('BSE.csv')
+    .pipe(parse(
+        {
+            comment:"#",
+            columns:true
+        }
+    ))
+    .on("data",(data)=>{
+        result.push(data);
+    })
+    .on("error",(error)=>{
+        console.log(error);
+    })
+    .on("end",()=>{
+        res.send(result);
+        console.log(result);
+        console.log("Done");
+    })
+})
 
+app.get("/ashok",(req,res)=>{
+    result=[];
+    fs.createReadStream('ASHOKLEY.NS.csv')
+    .pipe(parse(
+        {
+            comment:"#",
+            columns:true
+        }
+    ))
+    .on("data",(data)=>{
+        result.push(data);
+    })
+    .on("error",(error)=>{
+        console.log(error);
+    })
+    .on("end",()=>{
+        res.send(result);
+        console.log(result);
+        console.log("Done");
+    })
+})
+
+app.get("/cipla",(req,res)=>{
+    result=[];
+    fs.createReadStream('CIPLA.NS.csv')
+    .pipe(parse(
+        {
+            comment:"#",
+            columns:true
+        }
+    ))
+    .on("data",(data)=>{
+        result.push(data);
+    })
+    .on("error",(error)=>{
+        console.log(error);
+    })
+    .on("end",()=>{
+        res.send(result);
+        console.log(result);
+        console.log("Done");
+    })
+})
+
+app.get("/eichermot",(req,res)=>{
+    result=[];
+    fs.createReadStream('EICHERMOT.NS.csv')
+    .pipe(parse(
+        {
+            comment:"#",
+            columns:true
+        }
+    ))
+    .on("data",(data)=>{
+        result.push(data);
+    })
+    .on("error",(error)=>{
+        console.log(error);
+    })
+    .on("end",()=>{
+        res.send(result);
+        console.log(result);
+        console.log("Done");
+    })
+})
+
+app.get("/nsev",(req,res)=>{
+    result=[];
+    fs.createReadStream('NSE.V.csv')
+    .pipe(parse(
+        {
+            comment:"#",
+            columns:true
+        }
+    ))
+    .on("data",(data)=>{
+        result.push(data);
+    })
+    .on("error",(error)=>{
+        console.log(error);
+    })
+    .on("end",()=>{
+        res.send(result);
+        console.log(result);
+        console.log("Done");
+    })
+})
+
+app.get("/reliance",(req,res)=>{
+    result=[];
+    fs.createReadStream('RELIANCE.NS.csv')
+    .pipe(parse(
+        {
+            comment:"#",
+            columns:true
+        }
+    ))
+    .on("data",(data)=>{
+        result.push(data);
+    })
+    .on("error",(error)=>{
+        console.log(error);
+    })
+    .on("end",()=>{
+        res.send(result);
+        console.log(result);
+        console.log("Done");
+    })
+})
+
+app.get("/tatasteel",(req,res)=>{
+    result=[];
+    fs.createReadStream('TATASTEEL.NS.csv')
+    .pipe(parse(
+        {
+            comment:"#",
+            columns:true
+        }
+    ))
+    .on("data",(data)=>{
+        result.push(data);
+    })
+    .on("error",(error)=>{
+        console.log(error);
+    })
+    .on("end",()=>{
+        res.send(result);
+        console.log(result);
+        console.log("Done");
+    })
+})
